@@ -39,3 +39,23 @@ git branch -d feature01
 ## 如果需要删除远程 feature 分支:
 
 git push origin --delete feature01
+
+# release
+
+git checkout -b release-0.1.0 develop
+
+git checkout master
+git merge --no-ff release-0.1.0
+git push
+
+git checkout develop
+git merge --no-ff release-0.1.0
+git push
+
+git branch -d release-0.1.0
+git push origin --delete release-0.1.0
+
+## 合并 master/devlop 分支之后，打上 tag
+
+git tag -a v0.1.0 master
+git push --tags
