@@ -44,10 +44,12 @@ git push origin --delete feature01
 
 git checkout -b release-0.1.0 develop
 
+git pull origin master
 git checkout master
 git merge --no-ff release-0.1.0
 git push
 
+git pull origin develop
 git checkout develop
 git merge --no-ff release-0.1.0
 git push
