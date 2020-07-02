@@ -59,5 +59,25 @@ git push origin --delete release-0.1.0
 
 ## 合并 master/devlop 分支之后，打上 tag
 
-git tag -a v0.1.0 master
+git tag -a v0.1.0 master -m "v0.1.0"
+
+git push --tags
+
+# hotfix
+
+git checkout -b hotfix-0.1.1 master
+
+git checkout master
+git merge --no-ff hotfix-0.1.1
+git push
+
+git checkout develop
+git merge --no-ff hotfix-0.1.1
+git push
+
+git branch -d hotfix-0.1.1
+git push origin --delete hotfix-0.1.1
+
+git tag -a v0.1.1 master -m "v0.1.1"
+
 git push --tags
