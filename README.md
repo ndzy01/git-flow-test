@@ -32,8 +32,10 @@ git checkout develop
 git merge --no-ff feature01
 git push origin develop
 
-git branch -d some-feature
+## 删除本地分支
+
+git branch -d feature01
 
 ## 如果需要删除远程 feature 分支:
 
-git push origin --delete feature
+git push origin --delete feature01
