@@ -20,3 +20,20 @@ git push -u origin feature
 git status
 git add .
 git commit
+
+# 完成功能分支 feature01
+
+git pull origin develop
+git checkout develop
+
+#--no-ff：不使用 fast-forward 方式合并，保留分支的 commit 历史
+#--squash：使用 squash 方式合并，把多次分支 commit 历史压缩为一次
+
+git merge --no-ff feature01
+git push origin develop
+
+git branch -d some-feature
+
+## 如果需要删除远程 feature 分支:
+
+git push origin --delete feature
